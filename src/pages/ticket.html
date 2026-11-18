@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Тикет — БагТрекер</title>
+    <link rel="stylesheet" href="../styles/main.css">
+  </head>
+
+  <body>
+    <a class="skip" href="#main">К содержимому</a>
+
+    <header>
+      <a class="brand" href="../../index.html">
+        <span class="logo">
+          <img src="../../svg/icon.svg" alt="">
+        </span>
+        БагТрекер
+      </a>
+
+      <nav>
+        <a href="../../index.html" class="active" aria-current="page">Тикеты</a>
+        <a href="projects.html">Проекты</a>
+      </nav>
+
+      <div class="account">
+        <a class="button" href="#profile">Профиль</a>
+      </div>
+    </header>
+
+    <main id="main" class="container" tabindex="-1">
+      <a class="back" href="../../index.html">‹ Тикеты</a>
+
+      <div class="heading">
+        <div>
+          <span class="badge"></span>
+          <h1>Тикет</h1>
+          <p class="muted"></p>
+        </div>
+        <a class="button" href="ticket-form.html">Редактировать</a>
+      </div>
+
+      <div class="columns">
+        <div class="stack">
+          <section class="panel">
+            <h2>Описание</h2>
+            <p class="multiline"></p>
+            <h3>Шаги воспроизведения</h3>
+            <p class="multiline"></p>
+            <h3>Ожидаемый результат</h3>
+            <p class="multiline"></p>
+          </section>
+
+          <section class="panel">
+            <h2>Вложения</h2>
+
+            <div>
+              <div class="empty">
+                <span class="empty-symbol" aria-hidden="true">◇</span>
+                <p>Вложений пока нет</p>
+              </div>
+            </div>
+            <ul id="attachments"></ul>
+          </section>
+
+          <section class="stack">
+            <h2>История исправлений</h2>
+
+            <div>
+              <div class="empty">
+                <span class="empty-symbol" aria-hidden="true">◇</span>
+                <p>Исправлений пока нет</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="panel">
+          <h2>Детали</h2>
+          <dl>
+            <dt>Статус</dt>
+            <dd>—</dd>
+            <dt>Приоритет</dt>
+            <dd>—</dd>
+            <dt>Проект</dt>
+            <dd>—</dd>
+            <dt>Найден в версии</dt>
+            <dd>—</dd>
+            <dt>Ответственный</dt>
+            <dd>—</dd>
+            <dt>Дедлайн</dt>
+            <dd>—</dd>
+          </dl>
+        </aside>
+      </div>
+    </main>
+
+    <section id="profile" class="modal" role="dialog" aria-modal="true" aria-labelledby="profile-title">
+      <div class="modal-panel">
+        <div class="heading">
+          <h2 id="profile-title">Профиль</h2>
+          <a class="button" href="#main" aria-label="Закрыть">×</a>
+        </div>
+
+        <div class="stack">
+          <label>
+            Имя
+            <input name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required>
+          </label>
+          <p class="error" role="alert"></p>
+
+          <div class="actions">
+            <a class="button" href="#main">Отмена</a>
+            <button type="button" class="primary">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

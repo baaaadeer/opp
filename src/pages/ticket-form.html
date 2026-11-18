@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Новый тикет — БагТрекер</title>
+    <link rel="stylesheet" href="../styles/main.css">
+  </head>
+
+  <body>
+    <a class="skip" href="#main">К содержимому</a>
+
+    <header>
+      <a class="brand" href="../../index.html">
+        <span class="logo">
+          <img src="../../svg/icon.svg" alt="">
+        </span>
+        БагТрекер
+      </a>
+
+      <nav>
+        <a href="../../index.html" class="active" aria-current="page">Тикеты</a>
+        <a href="projects.html">Проекты</a>
+      </nav>
+
+      <div class="account">
+        <a class="button" href="#profile">Профиль</a>
+      </div>
+    </header>
+
+    <main id="main" class="container" tabindex="-1">
+      <a class="back" href="../../index.html">‹ Тикеты</a>
+
+      <div class="heading">
+        <div>
+          <h1 id="editor-title">Новый тикет</h1>
+          <p class="muted">Опишите баг так, чтобы разработчик смог его воспроизвести</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="columns">
+          <section class="panel stack">
+            <h2>Описание бага</h2>
+            <label>
+              Название тикета
+              <input name="title" required>
+            </label>
+
+            <div class="form-grid">
+              <label>
+                Проект
+                <select name="projectId">
+                  <option value="">Не выбрано</option>
+                </select>
+              </label>
+              <label>
+                Версия, где найден баг
+                <select name="versionId">
+                  <option value="">Сначала выберите проект</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Приоритет
+              <select name="priority">
+                <option value="">Не выбрано</option>
+              </select>
+            </label>
+            <label>
+              Описание
+              <textarea name="description"></textarea>
+            </label>
+            <label>
+              Шаги воспроизведения
+              <textarea name="steps"></textarea>
+            </label>
+            <label>
+              Ожидаемый результат
+              <textarea name="expectedResult"></textarea>
+            </label>
+            <label>
+              Логи и скриншоты
+              <input type="file" name="attachments" multiple>
+            </label>
+          </section>
+
+          <aside class="panel stack">
+            <h2>Планирование и назначение</h2>
+            <label>
+              Ответственный
+              <select name="assigneeId">
+                <option value="">Не назначен</option>
+              </select>
+            </label>
+            <label>
+              Дедлайн
+              <input name="deadline" type="date">
+            </label>
+            <label>
+              Основание планирования
+              <textarea name="reason"></textarea>
+            </label>
+          </aside>
+        </div>
+
+        <div class="panel actions">
+          <a class="button danger" href="#delete">Удалить черновик</a>
+          <a class="button" href="../../index.html">Отмена</a>
+          <button class="primary" type="button">Сохранить</button>
+        </div>
+        <p class="error" role="alert"></p>
+      </div>
+    </main>
+
+    <section id="profile" class="modal" role="dialog" aria-modal="true" aria-labelledby="profile-title">
+      <div class="modal-panel">
+        <div class="heading">
+          <h2 id="profile-title">Профиль</h2>
+          <a class="button" href="#main" aria-label="Закрыть">×</a>
+        </div>
+
+        <div class="stack">
+          <label>
+            Имя
+            <input name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required>
+          </label>
+          <p class="error" role="alert"></p>
+
+          <div class="actions">
+            <a class="button" href="#main">Отмена</a>
+            <button type="button" class="primary">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="delete" class="modal" role="dialog" aria-modal="true" aria-labelledby="delete-title">
+      <div class="modal-panel">
+        <div class="heading">
+          <h2 id="delete-title">Удалить черновик</h2>
+          <a class="button" href="#main" aria-label="Закрыть">×</a>
+        </div>
+
+        <div>
+          <p>Черновик будет удалён без возможности восстановления.</p>
+          <p class="error" role="alert"></p>
+
+          <div class="actions">
+            <a class="button" href="#main">Отмена</a>
+            <button type="button" class="danger">Удалить</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

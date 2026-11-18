@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Проекты — БагТрекер</title>
+    <link rel="stylesheet" href="../styles/main.css">
+  </head>
+
+  <body>
+    <a class="skip" href="#main">К содержимому</a>
+
+    <header>
+      <a class="brand" href="../../index.html">
+        <span class="logo">
+          <img src="../../svg/icon.svg" alt="">
+        </span>
+        БагТрекер
+      </a>
+
+      <nav>
+        <a href="../../index.html">Тикеты</a>
+        <a href="projects.html" class="active" aria-current="page">Проекты</a>
+      </nav>
+
+      <div class="account">
+        <a class="button" href="#profile">Профиль</a>
+      </div>
+    </header>
+
+    <main id="main" class="container" tabindex="-1">
+      <div class="heading">
+        <div>
+          <h1>Проекты</h1>
+          <p class="muted">Проекты, в которых вы участвуете</p>
+        </div>
+        <a class="button primary" href="#project">＋ Внести проект</a>
+      </div>
+
+      <div class="panel">
+        <div class="empty">
+          <span class="empty-symbol" aria-hidden="true">◇</span>
+          <p>Проектов пока нет</p>
+        </div>
+      </div>
+    </main>
+
+    <section id="profile" class="modal" role="dialog" aria-modal="true" aria-labelledby="profile-title">
+      <div class="modal-panel">
+        <div class="heading">
+          <h2 id="profile-title">Профиль</h2>
+          <a class="button" href="#main" aria-label="Закрыть">×</a>
+        </div>
+
+        <div class="stack">
+          <label>
+            Имя
+            <input name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required>
+          </label>
+          <p class="error" role="alert"></p>
+
+          <div class="actions">
+            <a class="button" href="#main">Отмена</a>
+            <button type="button" class="primary">Сохранить</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project" class="modal" role="dialog" aria-modal="true" aria-labelledby="project-title">
+      <div class="modal-panel">
+        <div class="heading">
+          <h2 id="project-title">Внести проект</h2>
+          <a class="button" href="#main" aria-label="Закрыть">×</a>
+        </div>
+
+        <div class="stack">
+          <label>
+            Название
+            <input name="name" required>
+          </label>
+          <label>
+            Описание
+            <textarea name="description"></textarea>
+          </label>
+          <label>
+            Версия
+            <input name="version">
+          </label>
+          <label>
+            Участник
+            <select name="memberId">
+              <option value="">Не выбрано</option>
+            </select>
+          </label>
+          <p class="error" role="alert"></p>
+
+          <div class="actions">
+            <a class="button" href="#main">Отмена</a>
+            <button type="button" class="primary">Создать проект</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
